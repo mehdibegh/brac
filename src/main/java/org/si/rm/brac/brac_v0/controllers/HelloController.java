@@ -10,7 +10,8 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
-        AuthentificationHandler authentificationHandler = new AuthentificationHandler("mehdi Begh","mehdi123");
-        authentificationHandler.run();
+        AuthentificationHandler authentificationHandler = new AuthentificationHandler();
+        boolean acces = authentificationHandler.checkAccess("mehdi begh","mehdi123");
+        System.out.println(acces);
     }
 }

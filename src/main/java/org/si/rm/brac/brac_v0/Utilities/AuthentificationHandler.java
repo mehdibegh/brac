@@ -1,7 +1,9 @@
 package org.si.rm.brac.brac_v0.Utilities;
 
+import javafx.scene.control.Alert;
 import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.models.Fxmodels.LoginInformation;
+import org.si.rm.brac.brac_v0.others.bulders.AlertServiceBuilder;
 import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.database.AuthentificationServiceBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxHttpClientFactory;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;
@@ -23,12 +25,17 @@ public class AuthentificationHandler{
         this.PASSWORD = password;
 
         LoginInformation loginInformation = getLoginInformation();
-        if (loginInformation != null && loginInformation.getPassword().equals(PASSWORD))
+        if (loginInformation != null && !loginInformation.getPassword().equals(PASSWORD))
         {
-            return true ;
+            ((Alert)Lookup.getInstance().getService(AlertServiceBuilder.class).createAlert(Alert.AlertType.INFORMATION)
+                    .setMessage("عدرا يوجد خطا في كلمة السر ..!")
+                    .setTitle("معالجة التسجيل")
+                    .build()).show();
+            return false ;
         }else{
-
+            if(loginInformation != null) return true ;
         }
+        return false;
     }
 
     public LoginInformation getLoginInformation() {

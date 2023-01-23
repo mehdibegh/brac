@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.si.rm.brac.brac_v0.others.bulders.AlertServiceBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxHttpClientFactory;
 import org.si.rm.brac.brac_v0.others.factories.FxModelsFactory;
 import org.si.rm.brac.brac_v0.others.factories.FxmlLoaderFactory;
@@ -33,6 +34,9 @@ public class Launcher extends Application {
 
         FxModelsFactory fxModelsFactory = new FxModelsFactory();
         Lookup.getInstance().register(FxModelsFactory.class, fxModelsFactory);
+
+        AlertServiceBuilder alertServiceBuilder = new AlertServiceBuilder();
+        Lookup.getInstance().register(AlertServiceBuilder.class, alertServiceBuilder);
 
 
         launch();

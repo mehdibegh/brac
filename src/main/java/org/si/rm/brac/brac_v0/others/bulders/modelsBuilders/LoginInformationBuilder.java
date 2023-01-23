@@ -1,7 +1,10 @@
 package org.si.rm.brac.brac_v0.others.bulders.modelsBuilders;
 
+import javafx.scene.control.Alert;
+import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.models.Fxmodels.FxModel;
 import org.si.rm.brac.brac_v0.models.Fxmodels.LoginInformation;
+import org.si.rm.brac.brac_v0.others.bulders.AlertServiceBuilder;
 import org.si.rm.brac.brac_v0.others.bulders.ModelBuilder;
 import org.si.rm.brac.brac_v0.others.parsers.JsonResponseParser;
 import org.si.rm.brac.brac_v0.others.parsers.LoginParser;
@@ -23,10 +26,15 @@ public class LoginInformationBuilder implements ModelBuilder {
     @Override
     public FxModel build() {
         ArrayList<FxModel> list = jsonResponseParser.get(RESPONSE);
-        if(list.size() != 1)
+        if(list.size() == 0)
         {
-
+            ((Alert)Lookup.getInstance().getService(AlertServiceBuilder.class).createAlert(Alert.AlertType.INFORMATION)
+                    .setMessage("عدرا لايوجد حساب بهدا الاسم ..!")
+                    .setTitle("معالجة التسجيل")
+                    .build()).show();
+            return null ;
         }
+
         loginInfo = (LoginInformation)list.get(0);
 
         return loginInfo;
