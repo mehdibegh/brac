@@ -1,14 +1,12 @@
 package org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders;
 
 import org.si.rm.brac.brac_v0.others.bulders.HttpClientServiceBuilder;
-import org.si.rm.brac.brac_v0.services.errorHandlerServices.ErrorHandler;
+import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.exceptions.NotAmethod;
 import org.si.rm.brac.brac_v0.services.httpClientServices.DataBaseHttpClient;
 import org.si.rm.brac.brac_v0.services.httpClientServices.HttpClientService;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
-import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.time.Duration;
@@ -97,7 +95,7 @@ public class DataBaseServiceBuilder implements HttpClientServiceBuilder {
     }
 
     @Override
-    public HttpClientServiceBuilder setErrorHandler(ErrorHandler eh) {
+    public HttpClientServiceBuilder setErrorHandler(ConnectionStatusCodeHandler eh) {
         httpClientService.setErrorHandler(eh);
         return this;
     }

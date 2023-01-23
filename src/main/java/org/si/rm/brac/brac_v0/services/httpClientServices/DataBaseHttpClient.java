@@ -1,7 +1,5 @@
 package org.si.rm.brac.brac_v0.services.httpClientServices;
 
-import org.si.rm.brac.brac_v0.models.Fxmodels.FxModel;
-import org.si.rm.brac.brac_v0.others.bulders.Builder;
 import org.si.rm.brac.brac_v0.others.bulders.ModelBuilder;
 
 import java.io.IOException;
@@ -18,10 +16,10 @@ public class DataBaseHttpClient extends HttpClientService{
         try {
             httpResponse = httpClient.send(httpRequest , HttpResponse.BodyHandlers.ofString());
 
-            if(errorHandler.checkRespond(httpResponse))
+            if(connectionStatusCodeHandler.checkRespond(httpResponse))
             {
                 ModelBuilder builder = (ModelBuilder) fxModelsFactory.get(getProduct());
-                System.out.println("Response From Authentification server : ");
+                System.out.println("Response From Data Base  : ");
                 System.out.println(httpResponse.body());
                 return builder.setResponse(httpResponse.body()).build();
             }

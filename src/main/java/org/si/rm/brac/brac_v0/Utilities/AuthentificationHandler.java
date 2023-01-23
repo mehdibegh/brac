@@ -2,29 +2,36 @@ package org.si.rm.brac.brac_v0.Utilities;
 
 import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.models.Fxmodels.LoginInformation;
-import org.si.rm.brac.brac_v0.others.bulders.HttpClientServiceBuilder;
 import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.database.AuthentificationServiceBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxHttpClientFactory;
-import org.si.rm.brac.brac_v0.services.errorHandlerServices.DataBaseRespondHandler;
+import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.exceptions.NotAmethod;
 import org.si.rm.brac.brac_v0.services.httpClientServices.DataBaseHttpClient;
-import org.si.rm.brac.brac_v0.services.httpClientServices.HttpClientService;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-public class AuthentificationHandler implements Utility{
+public class AuthentificationHandler{
     private String USERNAM = "";
     private String PASSWORD = "";
 
-    public AuthentificationHandler(String USERNAM, String PASSWORD) {
-        this.USERNAM = USERNAM;
-        this.PASSWORD = PASSWORD;
+
+    public boolean checkAccess(String usernam , String password)
+    {
+        this.USERNAM = usernam;
+        this.PASSWORD = password;
+
+        LoginInformation loginInformation = getLoginInformation();
+        if (loginInformation != null && loginInformation.getPassword().equals(PASSWORD))
+        {
+            return true ;
+        }else{
+
+        }
     }
 
-    @Override
-    public void run() {
+    public LoginInformation getLoginInformation() {
         String us = "";
         try {
             us = URLEncoder.encode(USERNAM, StandardCharsets.UTF_8.toString());
@@ -41,16 +48,14 @@ public class AuthentificationHandler implements Utility{
                 .get("Authentification");
 
         try {
-            DataBaseHttpClient httpClientService =(DataBaseHttpClient) builder.createConnection().setRequest(request).setErrorHandler(new DataBaseRespondHandler()).build();
+            DataBaseHttpClient httpClientService =(DataBaseHttpClient) builder.createConnection().setRequest(request).setErrorHandler(new ConnectionStatusCodeHandler()).build();
             LoginInformation model = (LoginInformation) httpClientService.get();
 
-            if(model.getPassword().equals(PASSWORD))
-            {
-            }
+            return model;
         } catch (NotAmethod e) {
             e.printStackTrace();
         }
 
-
+        return null;
     }
 }

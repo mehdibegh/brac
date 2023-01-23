@@ -2,9 +2,8 @@ package org.si.rm.brac.brac_v0.services.httpClientServices;
 
 import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.others.factories.FxModelsFactory;
-import org.si.rm.brac.brac_v0.services.errorHandlerServices.ErrorHandler;
+import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;
 import java.net.http.*;
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 public abstract class HttpClientService extends Object{
@@ -14,7 +13,7 @@ public abstract class HttpClientService extends Object{
     protected HttpClient httpClient = null;
     private boolean Sync = true ; //Todo :
     protected FxModelsFactory fxModelsFactory= null ;
-    protected ErrorHandler errorHandler = null;
+    protected ConnectionStatusCodeHandler connectionStatusCodeHandler = null;
 
     public HttpClientService() {
         this.fxModelsFactory = Lookup.getInstance().getService(FxModelsFactory.class);
@@ -38,8 +37,8 @@ public abstract class HttpClientService extends Object{
         Sync = sync;
     }
 
-    public void setErrorHandler(ErrorHandler errorHandler) {
-        this.errorHandler = errorHandler;
+    public void setErrorHandler(ConnectionStatusCodeHandler connectionStatusCodeHandler) {
+        this.connectionStatusCodeHandler = connectionStatusCodeHandler;
     }
 
 

@@ -23,6 +23,10 @@ public class LoginInformationBuilder implements ModelBuilder {
     @Override
     public FxModel build() {
         ArrayList<FxModel> list = jsonResponseParser.get(RESPONSE);
+        if(list.size() != 1)
+        {
+
+        }
         loginInfo = (LoginInformation)list.get(0);
 
         return loginInfo;
