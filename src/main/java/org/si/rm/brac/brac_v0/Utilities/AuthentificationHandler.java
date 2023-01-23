@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 public class AuthentificationHandler{
     private String USERNAM = "";
     private String PASSWORD = "";
-
+    private String ROLE = "";
 
     public boolean checkAccess(String usernam , String password)
     {
@@ -25,21 +25,25 @@ public class AuthentificationHandler{
         this.PASSWORD = password;
 
         LoginInformation loginInformation = getLoginInformation();
+
         if (loginInformation != null && !loginInformation.getPassword().equals(PASSWORD))
         {
             ((Alert)Lookup.getInstance().getService(AlertServiceBuilder.class).createAlert(Alert.AlertType.INFORMATION)
                     .setMessage("عدرا يوجد خطا في كلمة السر ..!")
+                    .setHeaderText("كلمة السر خاطئة")
                     .setTitle("معالجة التسجيل")
                     .build()).show();
             return false ;
         }else{
-            if(loginInformation != null) return true ;
+
+            if(loginInformation != null) return true ; ROLE = loginInformation.getRole() ;
         }
         return false;
     }
 
     public LoginInformation getLoginInformation() {
         String us = "";
+
         try {
             us = URLEncoder.encode(USERNAM, StandardCharsets.UTF_8.toString());
             us = us.replace("+","%20");
@@ -64,5 +68,9 @@ public class AuthentificationHandler{
         }
 
         return null;
+    }
+
+    public String getROLE() {
+        return ROLE;
     }
 }

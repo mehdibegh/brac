@@ -2,7 +2,10 @@ package org.si.rm.brac.brac_v0.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.Utilities.AuthentificationHandler;
+import org.si.rm.brac.brac_v0.others.factories.FxmlLoaderFactory;
+import org.si.rm.brac.brac_v0.services.ProfileService;
 
 public class HelloController {
     @FXML
@@ -11,7 +14,15 @@ public class HelloController {
     @FXML
     protected void onHelloButtonClick() {
         AuthentificationHandler authentificationHandler = new AuthentificationHandler();
-        boolean acces = authentificationHandler.checkAccess("mehdi begh","mehdi123");
-        System.out.println(acces);
+        boolean success = authentificationHandler.checkAccess("mehdi begh54","mehdi123");
+
+        if(success)
+        {
+            ProfileService profile = new ProfileService("mehdi begh54",authentificationHandler.getROLE(),"mehdi123");
+            Lookup.getInstance().register(ProfileService.class,profile);
+
+            //()Lookup.getInstance().getService(FxmlLoaderFactory.class).get("Home")
+
+        }
     }
 }

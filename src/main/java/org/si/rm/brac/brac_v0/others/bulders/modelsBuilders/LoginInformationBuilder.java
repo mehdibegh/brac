@@ -26,18 +26,20 @@ public class LoginInformationBuilder implements ModelBuilder {
     @Override
     public FxModel build() {
         ArrayList<FxModel> list = jsonResponseParser.get(RESPONSE);
-        if(list.size() == 0)
+        if(list != null)
         {
-            ((Alert)Lookup.getInstance().getService(AlertServiceBuilder.class).createAlert(Alert.AlertType.INFORMATION)
-                    .setMessage("عدرا لايوجد حساب بهدا الاسم ..!")
-                    .setTitle("معالجة التسجيل")
-                    .build()).show();
-            return null ;
+            loginInfo = (LoginInformation)list.get(0);
+            return loginInfo;
         }
 
-        loginInfo = (LoginInformation)list.get(0);
+        ((Alert)Lookup.getInstance().getService(AlertServiceBuilder.class).createAlert(Alert.AlertType.WARNING)
+                    .setMessage("عدرا لايوجد حساب بهدا الاسم ..!")
+                    .setTitle("معالجة التسجيل")
+                    .setHeaderText("حساب خاطئ")
+                    .build()).show();
+        return null;
 
-        return loginInfo;
+
     }
 
     @Override
