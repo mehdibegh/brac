@@ -1,5 +1,7 @@
 package org.si.rm.brac.brac_v0.controllers;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.si.rm.brac.brac_v0.Lookup;
@@ -30,5 +32,12 @@ public class HelloController {
                     .build()).load();
 
         }
+    }
+
+    public void OnLogIn(ActionEvent actionEvent) {
+    }
+
+    public void ExitButton(ActionEvent actionEvent) {
+        Platform.exit();
     }
 }
