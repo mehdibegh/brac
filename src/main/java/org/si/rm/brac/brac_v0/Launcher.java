@@ -18,9 +18,11 @@ public class Launcher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("LoginInterface.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 750, 500);
+        scene.getStylesheets().add(Launcher.class.getResource(" Style.css").toExternalForm());
         stage.setTitle("Hello!");
         stage.setScene(scene);
+
         stage.show();
 
     }
