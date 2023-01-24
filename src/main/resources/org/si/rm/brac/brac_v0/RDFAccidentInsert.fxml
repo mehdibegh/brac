@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="556.0" prefWidth="1084.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.si.rm.brac.brac_v0.controllers.home.Cformulation.RDAFController">
+   <children>
+      <VBox alignment="CENTER" layoutX="850.0" layoutY="1.0" prefHeight="556.0" prefWidth="234.0" spacing="5.0">
+         <children>
+            <Button graphicTextGap="6.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="234.0" text="إنشاء ملف">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="234.0" text="إضافة فرد عسكري">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="234.0" text="إضافة فرد مدني">
+               <font>
+                  <Font name="Calibri Italic" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="234.0" text="إضافة مركبات">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="1.0" layoutY="2.0" prefHeight="556.0" prefWidth="849.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="66.0" layoutY="24.0" prefHeight="509.0" prefWidth="718.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="509.0" prefWidth="359.0" spacing="30.0">
+                     <children>
+                        <HBox alignment="TOP_RIGHT" prefHeight="1.0" prefWidth="309.0" spacing="20.0">
+                           <children>
+                              <TextField prefHeight="0.0" prefWidth="245.0" />
+                              <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="تاريخ:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="6.0" prefWidth="309.0" spacing="25.0">
+                           <children>
+                              <TextField prefHeight="8.0" prefWidth="245.0" />
+                              <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="فرقة:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="12.0" prefWidth="309.0" spacing="40.0">
+                           <children>
+                              <TextField prefHeight="0.0" prefWidth="187.0" />
+                              <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="تاريخ المحضر:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="6.0" prefWidth="309.0" spacing="10.0">
+                           <children>
+                              <TextField prefHeight="25.0" prefWidth="318.0" />
+                              <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="رقم المحضر:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="0.0" prefWidth="309.0" spacing="60.0">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="مادي" textFill="#00457a">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="509.0" prefWidth="359.0" spacing="30.0">
+                     <children>
+                        <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="309.0" spacing="20.0">
+                           <children>
+                              <TextField prefHeight="25.0" prefWidth="247.0" />
+                              <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="رقم الملف:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="8.0" prefWidth="309.0" spacing="25.0">
+                           <children>
+                              <TextField prefHeight="25.0" prefWidth="225.0" />
+                              <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="رقم م.د.ج.ع:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="23.0" prefWidth="309.0" spacing="40.0">
+                           <children>
+                              <TextField prefHeight="25.0" prefWidth="228.0" />
+                              <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="رقم و.ق.خ:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="11.0" prefWidth="309.0" spacing="10.0">
+                           <children>
+                              <TextField prefHeight="25.0" prefWidth="282.0" />
+                              <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="مكان:">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="0.0" prefWidth="309.0" spacing="60.0">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="جسماني" textFill="#00457a">
+                                 <font>
+                                    <Font name="Calibri Bold" size="13.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
