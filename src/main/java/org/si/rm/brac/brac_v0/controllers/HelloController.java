@@ -34,10 +34,5 @@ public class HelloController {
         }
     }
 
-    public void OnLogIn(ActionEvent actionEvent) {
-    }
 
-    public void ExitButton(ActionEvent actionEvent) {
-        Platform.exit();
-    }
 }
