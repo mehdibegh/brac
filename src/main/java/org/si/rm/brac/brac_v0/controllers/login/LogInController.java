@@ -11,6 +11,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.Utilities.AuthentificationHandler;
+import org.si.rm.brac.brac_v0.Utilities.EncryptingHandler;
+import org.si.rm.brac.brac_v0.Utilities.RessourceHandler;
+import org.si.rm.brac.brac_v0.Utilities.ValidationHandler;
+import org.si.rm.brac.brac_v0.others.bulders.FxmlLoaderBuilder;
 import org.si.rm.brac.brac_v0.others.bulders.viewLoaderBuilders.FormulationHomeLoaderBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxmlLoaderFactory;
 import org.si.rm.brac.brac_v0.services.ProfileService;
@@ -46,7 +50,7 @@ public class LogInController implements Initializable {
     private Button loginBtn;
 
     @FXML
-    private PasswordField passworld;
+    private PasswordField password;
 
     @FXML
     private Button signInBtn;
@@ -61,21 +65,39 @@ public class LogInController implements Initializable {
 
     @FXML
     void logIn(ActionEvent event) {
-        AuthentificationHandler authentificationHandler = new AuthentificationHandler();
-        boolean success = authentificationHandler.checkAccess(userName.getText(),"mehdi123");
 
-        if(success)
-        {
-            ProfileService profile = new ProfileService("mehdi begh54",authentificationHandler.getROLE(),"mehdi123");
-            Lookup.getInstance().register(ProfileService.class,profile);
+        ValidationHandler validationHandler = new ValidationHandler();
+        validationHandler.add(userName.getText()).add(password.getText());
+        boolean successValidation = validationHandler.validateFields();
 
-            ((FormulationHomeLoader)((FormulationHomeLoaderBuilder)Lookup.getInstance().getService(FxmlLoaderFactory.class).get("Formulation Home"))
-                    .setParent()
-                    .setResource()
-                    .setCSS()
-                    .build()).load();
+        if(successValidation)
+            {
+                EncryptingHandler encryptingHandler = new EncryptingHandler();
+                String encrypted_password = encryptingHandler.Encrypt(password.getText());
 
-        }
+                AuthentificationHandler authentificationHandler = new AuthentificationHandler();
+                boolean success = authentificationHandler.checkAccess(userName.getText(),encrypted_password);
+
+                if(success)
+                {
+                    ProfileService profile = new ProfileService(userName.getText(),authentificationHandler.getROLE(),encrypted_password);
+                    Lookup.getInstance().register(ProfileService.class,profile);
+
+                    RessourceHandler ressourceHandler = new RessourceHandler();
+
+                    ((FxmlLoaderBuilder)((FxmlLoaderBuilder)Lookup.getInstance().getService(FxmlLoaderFactory.class).get(authentificationHandler.getROLE()))
+                            .setParent(null)
+                            .setResource(ressourceHandler.getRessourceName(authentificationHandler.getROLE()))
+                            .setCSS()
+                            .build()).load();
+                }
+
+            }
+
+
+
+
+
     }
 
     @FXML

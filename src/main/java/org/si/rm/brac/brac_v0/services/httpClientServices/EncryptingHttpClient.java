@@ -1,16 +1,16 @@
 package org.si.rm.brac.brac_v0.services.httpClientServices;
 
-import org.si.rm.brac.brac_v0.others.bulders.ModelBuilder;
+import org.si.rm.brac.brac_v0.others.parsers.EncryptingResponseParser;
 import org.si.rm.brac.brac_v0.others.parsers.FieldValidatoResponseParse;
-import org.si.rm.brac.brac_v0.others.parsers.JsonValidatorResponseParser;
+import org.si.rm.brac.brac_v0.others.parsers.JsonEncryptingResponseParser;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;
 
-public class ValidatorHttpClient extends HttpClientService{
+public class EncryptingHttpClient extends HttpClientService{
     @Override
     public Object get() {
-       return null;
+        return null;
     }
 
     @Override
@@ -20,11 +20,11 @@ public class ValidatorHttpClient extends HttpClientService{
 
             if(connectionStatusCodeHandler.checkRespond(httpResponse))
             {
-                System.out.println("Response From Validation server  : ");
+                System.out.println("Response From Encrypting server  : ");
                 System.out.println(httpResponse.body());
 
-                FieldValidatoResponseParse fvtrp = new FieldValidatoResponseParse();
-                return  fvtrp.get(httpResponse.body());
+                JsonEncryptingResponseParser parser = new EncryptingResponseParser();
+                return parser.getPassword(httpResponse.body());
 
             }
         } catch (IOException e) {

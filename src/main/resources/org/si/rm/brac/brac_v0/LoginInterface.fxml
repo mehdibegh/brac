@@ -62,7 +62,7 @@
                                 </HBox>
                                 <HBox prefHeight="42.0" prefWidth="350.0" spacing="10.0">
                                     <children>
-                                        <PasswordField fx:id="passworld" alignment="CENTER" prefHeight="26.0" prefWidth="230.0" promptText="كلمة المرور...">
+                                        <PasswordField fx:id="password" alignment="CENTER" prefHeight="26.0" prefWidth="230.0" promptText="كلمة المرور...">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>

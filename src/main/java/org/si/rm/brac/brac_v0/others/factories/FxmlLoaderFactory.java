@@ -13,15 +13,23 @@ public class FxmlLoaderFactory implements ServiceFactory {
     @Override
     public Builder get(String product) {
         switch (product){
-            case "Formulation Home":
+            case "ADMINISTRATEUR":
                 loaderBuilder = new FormulationHomeLoaderBuilder();
                 break;
 
-            case "loader2":
+            case "AGENT_DE_FORMULATION":
                 loaderBuilder = new Loader1Builder();
                 break;
 
-            case "loader3":
+            case "CHEF_DE_FORMULATION":
+                loaderBuilder = new Loader1Builder();
+                break;
+
+            case "AGENT_D\\'EXPLOITATION":
+                loaderBuilder = new Loader1Builder();
+                break;
+
+            case "CHEF_D\\'EXPLOITATION":
                 loaderBuilder = new Loader1Builder();
                 break;
 

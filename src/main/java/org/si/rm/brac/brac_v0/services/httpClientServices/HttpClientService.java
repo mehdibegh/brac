@@ -23,7 +23,7 @@ public abstract class HttpClientService extends Object{
 
     public abstract Object get();
 
-    public abstract void post();
+    public abstract Object post();
 
     public abstract void update();
 

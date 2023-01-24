@@ -22,7 +22,7 @@ public class ValidationHandler {
         return this;
     }
 
-    public ArrayList<Integer> validateFields()
+    public boolean validateFields()
     {
         ArrayList<Integer> list = new ArrayList<>();
         FieldValidatorJsonCreator fieldValidatorJsonCreator = new FieldValidatorJsonCreator();
@@ -32,13 +32,14 @@ public class ValidationHandler {
         String[] request = {"/EmptyField","POST",data};
 
         try {
-            ((ValidatorHttpClient)((ValidatorServiceBuilder)Lookup.getInstance().getService(FxHttpClientFactory.class).get("Validator"))
+            return (Boolean) ((ValidatorHttpClient)((ValidatorServiceBuilder)Lookup.getInstance().getService(FxHttpClientFactory.class).get("Validation"))
                     .createConnection()
                     .setRequest(request)
                     .setErrorHandler(new ConnectionStatusCodeHandler())
-                    .build()).get();
+                    .build()).post();
         } catch (NotAmethod e) {
             e.printStackTrace();
         }
+        return false;
     }
 }

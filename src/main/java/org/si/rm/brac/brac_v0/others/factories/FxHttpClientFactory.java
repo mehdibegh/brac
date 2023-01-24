@@ -28,8 +28,12 @@ public class FxHttpClientFactory implements ServiceFactory {
             case "Formulation":
                 httpClientServiceBuilder = new FormulationServiceBuilder("8088");
                 break;
-            case "Validator":
+            case "Validation":
                 httpClientServiceBuilder = new ValidatorServiceBuilder();
+                break;
+
+            case "Encrypting" :
+                httpClientServiceBuilder = new EncryptingServiceBuilder();
                 break;
             default:
                 break;

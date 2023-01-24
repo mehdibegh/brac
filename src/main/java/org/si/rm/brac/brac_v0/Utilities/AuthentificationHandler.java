@@ -19,6 +19,7 @@ public class AuthentificationHandler{
     private String PASSWORD = "";
     private String ROLE = "";
 
+
     public boolean checkAccess(String usernam , String password)
     {
         this.USERNAM = usernam;

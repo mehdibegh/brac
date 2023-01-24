@@ -5,7 +5,7 @@ import org.si.rm.brac.brac_v0.others.bulders.ModelBuilder;
 import java.io.IOException;
 import java.net.http.HttpResponse;
 
-public class DataBaseHttpClient extends HttpClientService{
+public class DataBaseHttpClient extends HttpClientService {
 
     public DataBaseHttpClient() {
         System.out.println("Data base Rest client created ..!");
@@ -14,10 +14,9 @@ public class DataBaseHttpClient extends HttpClientService{
     @Override
     public Object get() {
         try {
-            httpResponse = httpClient.send(httpRequest , HttpResponse.BodyHandlers.ofString());
+            httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
 
-            if(connectionStatusCodeHandler.checkRespond(httpResponse))
-            {
+            if (connectionStatusCodeHandler.checkRespond(httpResponse)) {
                 ModelBuilder builder = (ModelBuilder) fxModelsFactory.get(getProduct());
                 System.out.println("Response From Data Base  : ");
                 System.out.println(httpResponse.body());
@@ -32,16 +31,10 @@ public class DataBaseHttpClient extends HttpClientService{
     }
 
     @Override
-    public void post() {
-        try {
-            httpResponse = httpClient.send(httpRequest , HttpResponse.BodyHandlers.ofString());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public Object post() {
+        return null;
     }
+
 
     @Override
     public void update() {

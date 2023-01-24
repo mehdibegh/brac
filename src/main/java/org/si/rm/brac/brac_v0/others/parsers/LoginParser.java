@@ -7,7 +7,7 @@ import org.si.rm.brac.brac_v0.models.Fxmodels.LoginInformation;
 
 import java.util.ArrayList;
 
-public class LoginParser implements JsonResponseParser{
+public class LoginParser implements JsonDataBaseResponseParser {
     @Override
     public ArrayList<FxModel> get(String JsonData) {
         final JSONObject obj = new JSONObject(JsonData);
