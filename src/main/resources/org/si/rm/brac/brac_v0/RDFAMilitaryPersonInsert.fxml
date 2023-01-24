@@ -14,7 +14,7 @@
    <children>
       <AnchorPane prefHeight="556.0" prefWidth="849.0" style="-fx-background-color: white;">
          <children>
-            <VBox alignment="CENTER_RIGHT" layoutX="174.0" layoutY="67.0" prefHeight="422.0" prefWidth="501.0" spacing="30.0">
+            <VBox alignment="CENTER" layoutX="174.0" layoutY="67.0" prefHeight="422.0" prefWidth="501.0" spacing="30.0">
                <children>
                   <HBox alignment="CENTER" prefHeight="25.0" prefWidth="402.0" spacing="30.0">
                      <children>
@@ -66,6 +66,11 @@
                         </Text>
                      </children>
                   </HBox>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="234.0" text="إضافة فرد عسكري ">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </VBox>
          </children>
@@ -88,6 +93,11 @@
                </font>
             </Button>
             <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="234.0" text="إضافة مركبات">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="45.0" prefWidth="234.0" text="تسجيل الملف">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
                </font>
