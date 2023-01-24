@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ParentAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.si.rm.brac.brac_v0.controllers.home.Cformulation.FormulationHomeController">
+   <children>
+      <Pane fx:id="GDDA" layoutX="312.0" layoutY="24.0" onMouseClicked="#loadGDA" opacity="0.6" prefHeight="150.0" prefWidth="275.0" style="-fx-background-color: gray;" styleClass="secondery-container">
+         <children>
+            <Pane prefHeight="40.0" prefWidth="275.0" style="-fx-background-color: white;" styleClass="header">
+               <children>
+                  <Label layoutX="7.0" layoutY="7.0" prefHeight="27.0" prefWidth="275.0" text="Gestion des dossiers d'accidents" textFill="#063000">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutY="37.0" prefHeight="6.0" prefWidth="275.0" style="-fx-background-color: green;" />
+               </children>
+            </Pane>
+            <Label layoutX="46.0" layoutY="40.0" prefHeight="27.0" prefWidth="219.0" text="تسيير ومراقبة حوادث المرور المسجلة:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="3.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="RDNF" layoutX="517.0" layoutY="252.0" onMouseClicked="#loadRDNF" opacity="0.6" prefHeight="150.0" prefWidth="345.0" style="-fx-background-color: gray;" styleClass="secondery-container">
+         <children>
+            <Pane prefHeight="40.0" prefWidth="346.0" style="-fx-background-color: white;" styleClass="header">
+               <children>
+                  <Label layoutX="4.0" layoutY="7.0" prefHeight="27.0" prefWidth="345.0" text="Renseignement d'un Dossier non Formulé" textFill="#006aa6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="91.0" layoutY="43.0" prefHeight="27.0" prefWidth="254.0" text="تسجيل ملف حادث جديد غير قابل للصياغة:" textFill="#ffebeb">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="4.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../../Documents/demo1/src/main/resources/com/finance/luncher/images/bill.png" />
+               </image>
+            </ImageView>
+            <HBox layoutY="37.0" prefHeight="6.0" prefWidth="345.0" style="-fx-background-color: #006aa6;" />
+         </children>
+      </Pane>
+      <Pane fx:id="tb" layoutX="323.0" layoutY="461.0" onMouseClicked="#loadTB" opacity="0.6" prefHeight="150.0" prefWidth="275.0" style="-fx-background-color: gray;" styleClass="secondery-container">
+         <children>
+            <Pane prefHeight="40.0" prefWidth="275.0" style="-fx-background-color: white;" styleClass="header">
+               <children>
+                  <Label layoutX="46.0" layoutY="7.0" prefHeight="27.0" prefWidth="173.0" text="Tableaux de bords" textFill="#1f00a6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="94.0" layoutY="43.0" prefHeight="27.0" prefWidth="181.0" text="مراقبة تحليلية لحوادث المرور:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="5.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../../Documents/demo1/src/main/resources/com/finance/luncher/images/inbox.png" />
+               </image>
+            </ImageView>
+            <HBox layoutY="37.0" prefHeight="6.0" prefWidth="275.0" style="-fx-background-color: #1f00a6;" />
+         </children>
+      </Pane>
+      <Pane fx:id="RDAF" layoutX="32.0" layoutY="252.0" onMouseClicked="#loadRDAF" opacity="0.6" prefHeight="150.0" prefWidth="324.0" style="-fx-background-color: gray;" styleClass="secondery-container">
+         <children>
+            <Pane prefHeight="40.0" prefWidth="323.0" style="-fx-background-color: white;" styleClass="header">
+               <children>
+                  <Label layoutX="5.0" layoutY="7.0" prefHeight="27.0" prefWidth="315.0" text="Renseignement d'un Dossier à Formulé" textFill="#a60000">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutY="37.0" prefHeight="6.0" prefWidth="324.0" style="-fx-background-color: #a60000;" />
+               </children>
+            </Pane>
+            <Label layoutX="93.0" layoutY="40.0" prefHeight="27.0" prefWidth="230.0" text="تسجيل ملف حادث جديد قابل للصياغة:" textFill="#fffefe">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="64.0" fitWidth="64.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../../Documents/demo1/src/main/resources/com/finance/luncher/images/table.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

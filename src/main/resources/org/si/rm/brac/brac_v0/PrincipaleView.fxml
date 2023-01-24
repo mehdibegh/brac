@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1084.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox fx:id="headerPane" alignment="CENTER_RIGHT" prefHeight="210.0" prefWidth="1084.0" spacing="30.0">
+         <children>
+            <Pane prefHeight="122.0" prefWidth="1084.0" styleClass="header">
+               <children>
+                  <ImageView fitHeight="128.0" fitWidth="128.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../../../../../Documents/demo1/src/main/resources/com/finance/luncher/images/calendar.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" layoutX="288.0" layoutY="21.0" prefHeight="89.0" prefWidth="698.0" styleClass="school" />
+                  <Button fx:id="close" layoutX="1046.0" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: red; -fx-background-radius: 50%;" text="X" textFill="WHITE" />
+               </children>
+            </Pane>
+            <HBox prefHeight="58.0" prefWidth="1029.0" spacing="50.0">
+               <children>
+                  <Pane prefHeight="58.0" prefWidth="490.0" styleClass="acceuil">
+                     <children>
+                        <TextField layoutX="14.0" layoutY="10.0" prefHeight="37.0" prefWidth="392.0" promptText="ابحث هنا ..." styleClass="radius" />
+                        <Button layoutX="413.0" layoutY="9.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" text="Chercher">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="radius" />
+                              <String fx:value="radus-plus" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <HBox prefHeight="58.0" prefWidth="316.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="104.0" styleClass="btn" text="Acceuil" />
+                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="104.0" styleClass="btn" text="A propre" />
+                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="104.0" styleClass="btn" text="Paramettre" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="220.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="sidebarePane" layoutY="220.0" prefHeight="556.0" prefWidth="234.0" />
+      <AnchorPane fx:id="principalAnchor" layoutX="234.0" layoutY="220.0" prefHeight="556.0" prefWidth="849.0" />
+   </children>
+</AnchorPane>

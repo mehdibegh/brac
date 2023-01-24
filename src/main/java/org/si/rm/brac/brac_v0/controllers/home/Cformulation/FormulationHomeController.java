@@ -15,6 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class FormulationHomeController implements Initializable {
+
     @FXML
     private Pane GDDA;
 
@@ -30,14 +31,23 @@ public class FormulationHomeController implements Initializable {
     @FXML
     private Label TB;
 
-
     @FXML
     void loadGDA(MouseEvent event) {
-        ((FormulationHomeLoader)((FormulationHomeLoaderBuilder)Lookup.getInstance().getService(FxmlLoaderFactory.class).get("Formulation Home"))
-                .setParent()
-                .setResource()
-                .setCSS()
-                .build()).load();
+
+    }
+
+    @FXML
+    void loadRDAF(MouseEvent event) {
+
+    }
+
+    @FXML
+    void loadRDNF(MouseEvent event) {
+
+    }
+
+    @FXML
+    void loadTB(MouseEvent event) {
 
     }
     @Override
