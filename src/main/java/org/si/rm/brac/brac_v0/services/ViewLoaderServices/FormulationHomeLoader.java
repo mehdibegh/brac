@@ -7,7 +7,7 @@ import org.si.rm.brac.brac_v0.Launcher;
 
 import java.io.IOException;
 
-public class HomeLoader implements FxmlLoaderService{
+public class FormulationHomeLoader implements FxmlLoaderService{
     private String FXMLresource = "";
     private String CSSresource = "";
     private Parent parent = null;

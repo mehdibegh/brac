@@ -13,8 +13,8 @@ public class FxmlLoaderFactory implements ServiceFactory {
     @Override
     public Builder get(String product) {
         switch (product){
-            case "Home":
-                loaderBuilder = new HomeLoaderBuilder();
+            case "Formulation Home":
+                loaderBuilder = new FormulationHomeLoaderBuilder();
                 break;
 
             case "loader2":
