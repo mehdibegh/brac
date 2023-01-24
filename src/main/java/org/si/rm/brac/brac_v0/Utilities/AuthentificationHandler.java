@@ -4,7 +4,7 @@ import javafx.scene.control.Alert;
 import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.models.Fxmodels.LoginInformation;
 import org.si.rm.brac.brac_v0.others.bulders.AlertServiceBuilder;
-import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.database.AuthentificationServiceBuilder;
+import org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp.database.AuthentificationServiceBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxHttpClientFactory;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.exceptions.NotAmethod;

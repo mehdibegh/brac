@@ -1,4 +1,4 @@
-package org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders;
+package org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp;
 
 import org.si.rm.brac.brac_v0.others.bulders.HttpClientServiceBuilder;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;

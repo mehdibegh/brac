@@ -1,7 +1,7 @@
 package org.si.rm.brac.brac_v0.Utilities;
 
 import org.si.rm.brac.brac_v0.Lookup;
-import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.EncryptingServiceBuilder;
+import org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp.EncryptingServiceBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxHttpClientFactory;
 import org.si.rm.brac.brac_v0.others.parsers.JsonRequestParser;
 import org.si.rm.brac.brac_v0.others.parsers.PasswordEncryptingJsonCraetor;

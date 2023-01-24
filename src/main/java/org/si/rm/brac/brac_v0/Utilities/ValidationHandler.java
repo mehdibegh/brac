@@ -1,7 +1,7 @@
 package org.si.rm.brac.brac_v0.Utilities;
 
 import org.si.rm.brac.brac_v0.Lookup;
-import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.ValidatorServiceBuilder;
+import org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp.ValidatorServiceBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxHttpClientFactory;
 import org.si.rm.brac.brac_v0.others.parsers.FieldValidatorJsonCreator;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;

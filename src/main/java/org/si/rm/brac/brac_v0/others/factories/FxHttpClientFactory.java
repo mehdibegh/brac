@@ -2,10 +2,10 @@ package org.si.rm.brac.brac_v0.others.factories;
 
 import org.si.rm.brac.brac_v0.others.bulders.Builder;
 import org.si.rm.brac.brac_v0.others.bulders.HttpClientServiceBuilder;
-import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.*;
-import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.database.AuthentificationServiceBuilder;
-import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.database.ExploitationServiceBuilder;
-import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.database.FormulationServiceBuilder;
+import org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp.*;
+import org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp.database.AuthentificationServiceBuilder;
+import org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp.database.ExploitationServiceBuilder;
+import org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp.database.FormulationServiceBuilder;
 
 public class FxHttpClientFactory implements ServiceFactory {
     private HttpClientServiceBuilder httpClientServiceBuilder = null;

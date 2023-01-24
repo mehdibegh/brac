@@ -1,12 +1,10 @@
-package org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders;
+package org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp;
 
-import org.si.rm.brac.brac_v0.others.bulders.Builder;
 import org.si.rm.brac.brac_v0.others.bulders.HttpClientServiceBuilder;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.exceptions.NotAmethod;
 import org.si.rm.brac.brac_v0.services.httpClientServices.EncryptingHttpClient;
 import org.si.rm.brac.brac_v0.services.httpClientServices.HttpClientService;
-import org.si.rm.brac.brac_v0.services.httpClientServices.ValidatorHttpClient;
 
 import java.net.URI;
 import java.net.http.HttpClient;

@@ -12,13 +12,11 @@ import javafx.scene.text.Text;
 import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.Utilities.AuthentificationHandler;
 import org.si.rm.brac.brac_v0.Utilities.EncryptingHandler;
-import org.si.rm.brac.brac_v0.Utilities.RessourceHandler;
 import org.si.rm.brac.brac_v0.Utilities.ValidationHandler;
 import org.si.rm.brac.brac_v0.others.bulders.FxmlLoaderBuilder;
-import org.si.rm.brac.brac_v0.others.bulders.viewLoaderBuilders.FormulationHomeLoaderBuilder;
-import org.si.rm.brac.brac_v0.others.factories.FxmlLoaderFactory;
+import org.si.rm.brac.brac_v0.others.factories.FxLoaderFactory;
 import org.si.rm.brac.brac_v0.services.ProfileService;
-import org.si.rm.brac.brac_v0.services.ViewLoaderServices.FormulationHomeLoader;
+import org.si.rm.brac.brac_v0.services.ViewLoaderServices.FXMLoaderService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -68,6 +66,7 @@ public class LogInController implements Initializable {
 
         ValidationHandler validationHandler = new ValidationHandler();
         validationHandler.add(userName.getText()).add(password.getText());
+
         boolean successValidation = validationHandler.validateFields();
 
         if(successValidation)
@@ -83,13 +82,12 @@ public class LogInController implements Initializable {
                     ProfileService profile = new ProfileService(userName.getText(),authentificationHandler.getROLE(),encrypted_password);
                     Lookup.getInstance().register(ProfileService.class,profile);
 
-                    RessourceHandler ressourceHandler = new RessourceHandler();
-
-                    ((FxmlLoaderBuilder)((FxmlLoaderBuilder)Lookup.getInstance().getService(FxmlLoaderFactory.class).get(authentificationHandler.getROLE()))
-                            .setParent(null)
-                            .setResource(ressourceHandler.getRessourceName(authentificationHandler.getROLE()))
+                    ((FXMLoaderService)((FxmlLoaderBuilder)Lookup.getInstance().getService(FxLoaderFactory.class).get(authentificationHandler.getROLE()))
+                            .setResource()
                             .setCSS()
+                            .setParent(null)
                             .build()).load();
+
                 }
 
             }
