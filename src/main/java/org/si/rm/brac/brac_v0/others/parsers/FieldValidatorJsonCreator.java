@@ -13,13 +13,13 @@ public class FieldValidatorJsonCreator implements JsonRequestParser{
         for(int i =0;i<values.size();i++)
         {
             JSONObject field = new JSONObject();
-            field.append("field", values.get(i));
+            field.putOnce("field",values.get(i));
 
             dataValues.put(i,field);
 
         }
 
-        obj.append("data",dataValues);
+        obj.putOnce("data",dataValues);
         System.out.println(obj.toString());
         return  obj.toString();
     }

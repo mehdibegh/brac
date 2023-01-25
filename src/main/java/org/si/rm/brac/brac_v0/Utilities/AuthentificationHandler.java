@@ -4,7 +4,7 @@ import javafx.scene.control.Alert;
 import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.models.Fxmodels.LoginInformation;
 import org.si.rm.brac.brac_v0.others.bulders.AlertServiceBuilder;
-import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.database.AuthentificationServiceBuilder;
+import org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp.database.AuthentificationServiceBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxHttpClientFactory;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.exceptions.NotAmethod;
@@ -19,12 +19,18 @@ public class AuthentificationHandler{
     private String PASSWORD = "";
     private String ROLE = "";
 
+
     public boolean checkAccess(String usernam , String password)
     {
         this.USERNAM = usernam;
         this.PASSWORD = password;
 
         LoginInformation loginInformation = getLoginInformation();
+        System.out.println("Role: "+ loginInformation.getRole());
+        System.out.println("Password : "+ loginInformation.getPassword());
+        System.out.println("User: "+ usernam);
+
+        this.ROLE = loginInformation.getRole();
 
         if (loginInformation != null && !loginInformation.getPassword().equals(PASSWORD))
         {

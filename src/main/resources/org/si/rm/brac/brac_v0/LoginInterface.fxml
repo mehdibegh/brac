@@ -6,8 +6,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -15,17 +13,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="BigAnchor" prefHeight="493.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.si.rm.brac.brac_v0.controllers.HelloController">
+<AnchorPane fx:id="BigAnchor" prefHeight="566.0" prefWidth="765.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.si.rm.brac.brac_v0.controllers.login.LogInController">
     <children>
-        <AnchorPane fx:id="LeftAnchor" layoutX="435.0" prefHeight="493.0" prefWidth="317.0">
+        <AnchorPane fx:id="LeftAnchor" layoutX="435.0" prefHeight="566.0" prefWidth="338.0">
             <children>
-                <ImageView fitHeight="539.0" fitWidth="370.0" layoutX="-11.0" pickOnBounds="true">
-                    <image>
-                        <Image url="@Images/LoginInterfaceImages/rightanchor.jpg" />
-                    </image>
-                </ImageView>
-                <Button fx:id="ExitButton" layoutX="278.0" layoutY="14.0" minWidth="26.0" mnemonicParsing="false" onAction="#ExitButton" prefHeight="30.0" prefWidth="26.0" text="X" />
-                <VBox alignment="CENTER" focusTraversable="true" layoutX="5.0" layoutY="235.0" prefHeight="58.0" prefWidth="300.0" style="-fx-background-color: #00457a; -fx-background-radius: 20;">
+                <Button fx:id="ExitButton" layoutX="296.0" layoutY="7.0" minWidth="26.0" mnemonicParsing="false" onAction="#ExitButton" prefHeight="30.0" prefWidth="26.0" text="X" />
+                <VBox alignment="CENTER" focusTraversable="true" layoutX="12.0" layoutY="232.0" prefHeight="58.0" prefWidth="300.0" style="-fx-background-color: #00457a; -fx-background-radius: 20;">
                     <children>
                         <Text boundsType="VISUAL" fill="#fcfcfc" fontSmoothingType="LCD" stroke="#fcfcfc" strokeType="OUTSIDE" strokeWidth="0.0" text="المكتب الجهوي لشؤون المنازعات" textAlignment="CENTER" wrappingWidth="241.12109375" VBox.vgrow="NEVER">
                             <font>
@@ -41,78 +34,65 @@
                         </InnerShadow>
                     </effect>
                 </VBox>
-                <Button layoutX="113.0" layoutY="417.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="إنشاء حساب جديد" />
+                <Button fx:id="signInBtn" layoutX="108.0" layoutY="322.0" mnemonicParsing="false" onAction="#signIn" prefHeight="32.0" prefWidth="122.0" text="إنشاء حساب جديد" />
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="RightAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="427.0">
+        <AnchorPane fx:id="RightAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="427.0">
             <children>
-                <AnchorPane layoutX="24.0" layoutY="172.0" prefHeight="317.0" prefWidth="389.0">
+                <AnchorPane fx:id="infoAnchor" layoutX="18.0" layoutY="169.0" prefHeight="396.0" prefWidth="390.0">
                     <children>
-                        <ImageView fitHeight="326.0" fitWidth="325.0" layoutX="6.0" layoutY="-4.0" opacity="0.5" preserveRatio="true">
-                            <image>
-                                <Image url="@Images/LoginInterfaceImages/ANP.png" />
-                            </image>
-                        </ImageView>
-                        <VBox layoutX="42.0" layoutY="40.0" prefHeight="200.0" prefWidth="350.0">
+                        <VBox alignment="CENTER" layoutX="20.0" layoutY="76.0" prefHeight="200.0" prefWidth="350.0" spacing="25.0">
                             <children>
-                                <HBox prefHeight="70.0" prefWidth="350.0">
+                                <HBox prefHeight="36.0" prefWidth="350.0" spacing="10.0">
                                     <children>
-                                        <TextField fx:id="Txt2" alignment="CENTER" prefHeight="26.0" prefWidth="230.0" promptText="اسم المستخدم...">
+                                        <TextField fx:id="userName" alignment="CENTER" prefHeight="26.0" prefWidth="230.0" promptText="اسم المستخدم...">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>
                                         </TextField>
-                                        <Text fill="#00457a" stroke="#0a7ef2" strokeType="OUTSIDE" strokeWidth="0.0" text="رقم التسجيل:" textAlignment="RIGHT" translateX="10.0" translateY="7.0">
-                                            <font>
-                                                <Font name="Calibri" size="18.0" />
-                                            </font>
-                                        </Text>
-                                    </children>
-                                </HBox>
-                                <HBox prefHeight="70.0" prefWidth="200.0">
-                                    <children>
-                                        <TextField fx:id="Txt1" alignment="CENTER" prefHeight="26.0" prefWidth="230.0" promptText="رقم التسجيل...">
-                                            <font>
-                                                <Font name="System Bold" size="12.0" />
-                                            </font>
-                                        </TextField>
-                                        <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم المستخدم:" textAlignment="RIGHT" translateX="10.0" translateY="7.0">
+                                        <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="اسم المستخدم:" textAlignment="RIGHT" translateY="7.0">
                                             <font>
                                                 <Font name="Calibri Italic" size="18.0" />
                                             </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
                                         </Text>
                                     </children>
                                 </HBox>
-                                <HBox prefHeight="70.0" prefWidth="200.0">
+                                <HBox prefHeight="42.0" prefWidth="350.0" spacing="10.0">
                                     <children>
-                                        <PasswordField fx:id="Passwd" alignment="CENTER" prefHeight="26.0" prefWidth="230.0" promptText="كلمة المرور...">
+                                        <PasswordField fx:id="password" alignment="CENTER" prefHeight="26.0" prefWidth="230.0" promptText="كلمة المرور...">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>
                                         </PasswordField>
-                                        <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="كلمة المرور:" textAlignment="RIGHT" translateX="10.0" translateY="7.0">
+                                        <Text fill="#00457a" strokeType="OUTSIDE" strokeWidth="0.0" text="كلمة المرور:" textAlignment="RIGHT" translateY="7.0">
                                             <font>
                                                 <Font name="Calibri" size="18.0" />
                                             </font>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
                                         </Text>
                                     </children>
                                 </HBox>
+                              <Button fx:id="loginBtn" contentDisplay="CENTER" ellipsisString="" graphicTextGap="5.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#logIn" prefHeight="32.0" prefWidth="144.0" text="تسجيل الدخول" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                                  <effect>
+                                      <Blend mode="DARKEN" />
+                                  </effect>
+                                  <opaqueInsets>
+                                      <Insets top="5.0" />
+                                  </opaqueInsets>
+                                  <font>
+                                      <Font name="Calibri" size="15.0" />
+                                  </font>
+                              </Button>
                             </children>
                         </VBox>
-                        <Button contentDisplay="CENTER" ellipsisString="" graphicTextGap="5.0" layoutX="104.0" layoutY="245.0" lineSpacing="5.0" mnemonicParsing="false" onAction="#OnLogIn" prefHeight="32.0" prefWidth="122.0" text="تسجيل الدخول" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
-                            <effect>
-                                <Blend mode="DARKEN" />
-                            </effect>
-                            <opaqueInsets>
-                                <Insets top="5.0" />
-                            </opaqueInsets>
-                            <font>
-                                <Font name="Calibri" size="15.0" />
-                            </font>
-                        </Button>
                     </children>
                 </AnchorPane>
-                <VBox fx:id="TopRightVbox" alignment="CENTER" layoutX="24.0" layoutY="14.0" prefHeight="150.0" prefWidth="300.0">
+                <VBox fx:id="TopRightVbox" alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="145.0" prefWidth="358.0">
                     <children>
                         <Text fill="#e8ebee" strokeType="OUTSIDE" strokeWidth="0.0" text="الجمهورية الجزائرية الديموقراطية الشعبية">
                             <font>

@@ -1,7 +1,7 @@
 package org.si.rm.brac.brac_v0.Utilities;
 
 import org.si.rm.brac.brac_v0.Lookup;
-import org.si.rm.brac.brac_v0.others.bulders.httpClientBuilders.ValidatorServiceBuilder;
+import org.si.rm.brac.brac_v0.others.bulders.httpClientBuildersImp.ValidatorServiceBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxHttpClientFactory;
 import org.si.rm.brac.brac_v0.others.parsers.FieldValidatorJsonCreator;
 import org.si.rm.brac.brac_v0.services.errorHandlerServices.ConnectionStatusCodeHandler;
@@ -22,7 +22,7 @@ public class ValidationHandler {
         return this;
     }
 
-    public ArrayList<Integer> validateFields()
+    public boolean validateFields()
     {
         ArrayList<Integer> list = new ArrayList<>();
         FieldValidatorJsonCreator fieldValidatorJsonCreator = new FieldValidatorJsonCreator();
@@ -32,13 +32,14 @@ public class ValidationHandler {
         String[] request = {"/EmptyField","POST",data};
 
         try {
-            ((ValidatorHttpClient)((ValidatorServiceBuilder)Lookup.getInstance().getService(FxHttpClientFactory.class).get("Validator"))
+            return (Boolean) ((ValidatorHttpClient)((ValidatorServiceBuilder)Lookup.getInstance().getService(FxHttpClientFactory.class).get("Validation"))
                     .createConnection()
                     .setRequest(request)
                     .setErrorHandler(new ConnectionStatusCodeHandler())
-                    .build()).get();
+                    .build()).post();
         } catch (NotAmethod e) {
             e.printStackTrace();
         }
+        return false;
     }
 }
