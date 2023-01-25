@@ -40,13 +40,13 @@
 -fx-background-color: #00457a;
 }
 #LeftAnchor{
--fx-background-image:url("../../Images/LoginInterfaceImages/rightanchor.jpg") no repeat ;
+-fx-background-image:url("../Images/LoginInterfaceImages/rightanchor.jpg") no repeat ;
  -fx-background-repeat:no-repeat;
  -fx-background-size:cover;
  -fx-background-position:center center;
 }
 #infoAnchor{
--fx-background-image:url("../../Images/LoginInterfaceImages/ANP.png") no repeat ;
+-fx-background-image:url("../Images/LoginInterfaceImages/ANP.png") no repeat ;
  -fx-background-repeat:no-repeat;
  -fx-background-size:cover;
  -fx-background-position:center center;

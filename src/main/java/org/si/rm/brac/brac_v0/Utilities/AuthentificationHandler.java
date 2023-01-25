@@ -26,6 +26,11 @@ public class AuthentificationHandler{
         this.PASSWORD = password;
 
         LoginInformation loginInformation = getLoginInformation();
+        System.out.println("Role: "+ loginInformation.getRole());
+        System.out.println("Password : "+ loginInformation.getPassword());
+        System.out.println("User: "+ usernam);
+
+        this.ROLE = loginInformation.getRole();
 
         if (loginInformation != null && !loginInformation.getPassword().equals(PASSWORD))
         {

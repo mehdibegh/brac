@@ -14,8 +14,9 @@ public class DataBaseHttpClient extends HttpClientService {
     @Override
     public Object get() {
         try {
+            System.out.println("Request: "+httpRequest);
             httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
-
+            System.out.println("Response: "+httpResponse);
             if (connectionStatusCodeHandler.checkRespond(httpResponse)) {
                 ModelBuilder builder = (ModelBuilder) fxModelsFactory.get(getProduct());
                 System.out.println("Response From Data Base  : ");

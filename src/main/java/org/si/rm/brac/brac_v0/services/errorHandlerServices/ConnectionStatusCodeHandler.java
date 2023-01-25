@@ -13,7 +13,7 @@ public class ConnectionStatusCodeHandler {
             return true;
         }
         ((Alert) Lookup.getInstance().getService(AlertServiceBuilder.class).createAlert(Alert.AlertType.INFORMATION)
-                .setMessage("عدرا لايمكن الاتصال بخادم قاعدة البيانات ..!")
+                .setMessage("عدرا لايمكن الاتصال بخادم قاعدة البيانات ..!"+ "Error: "+httpResponse.statusCode())
                 .setTitle("اتصالات")
                 .build()).show();
         return false;

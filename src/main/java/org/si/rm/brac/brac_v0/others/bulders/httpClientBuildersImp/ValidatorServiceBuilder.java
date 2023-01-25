@@ -42,7 +42,6 @@ public class ValidatorServiceBuilder implements HttpClientServiceBuilder {
         HttpRequest request = null;
         String uri = null;
         uri = SCHEMA_URI + PORT + args[0];
-
         httpClientService.setURI(args[0]);
 
         switch (args[1]){
@@ -57,7 +56,6 @@ public class ValidatorServiceBuilder implements HttpClientServiceBuilder {
                 httpClientService.setHttpRequest(request);
                 return this;
             case "POST":
-
                 request = HttpRequest.newBuilder()
                         .uri(URI.create(uri))
                         .timeout(Duration.ofMinutes(2))

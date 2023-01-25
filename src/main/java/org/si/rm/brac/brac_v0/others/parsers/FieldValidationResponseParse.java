@@ -1,11 +1,8 @@
 package org.si.rm.brac.brac_v0.others.parsers;
 
 import org.json.JSONObject;
-import org.si.rm.brac.brac_v0.models.Fxmodels.FxModel;
 
-import java.util.ArrayList;
-
-public class FieldValidatoResponseParse implements JsonValidatorResponseParser {
+public class FieldValidationResponseParse implements JsonValidatorResponseParser {
 
     @Override
     public Boolean get(String jsonData) {
@@ -14,10 +11,12 @@ public class FieldValidatoResponseParse implements JsonValidatorResponseParser {
 
         if(message.equals("True"))
         {
+            System.out.println("True parsing");
             return true;
         }
         if(message.equals("False"))
         {
+            System.out.println("False parsing");
             return false;
         }
         return true;

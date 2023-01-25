@@ -17,7 +17,7 @@ public class EncryptingServiceBuilder implements HttpClientServiceBuilder {
     protected String PORT = "5000";
 
     public EncryptingServiceBuilder() {
-        System.out.println("Validator service builder created ..!");
+        System.out.println("Encrypting service builder created ..!");
         this.httpClientService = new EncryptingHttpClient();
     }
 
@@ -60,7 +60,7 @@ public class EncryptingServiceBuilder implements HttpClientServiceBuilder {
 
                 request = HttpRequest.newBuilder()
                         .uri(URI.create(uri))
-                        .timeout(Duration.ofMinutes(2))
+                        .timeout(Duration.ofMinutes(10))
                         .header("Content-Type", "application/json")
                         .POST(HttpRequest.BodyPublishers.ofString(args[2]))
                         .build();

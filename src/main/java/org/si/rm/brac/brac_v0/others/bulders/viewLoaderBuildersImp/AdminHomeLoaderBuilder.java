@@ -17,7 +17,7 @@ public class AdminHomeLoaderBuilder implements FxmlLoaderBuilder {
 
     @Override
     public FxmlLoaderBuilder setCSS() {
-        fxmlLoaderService.setCSS_resource("./styles/adminHome.css");
+        fxmlLoaderService.setCSS_resource("styles/adminHome.css");
         return this;
     }
 

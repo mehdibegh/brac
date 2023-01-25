@@ -3,25 +3,28 @@ package org.si.rm.brac.brac_v0.controllers.login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+
+import javafx.stage.Stage;
 import org.si.rm.brac.brac_v0.Lookup;
 import org.si.rm.brac.brac_v0.Utilities.AuthentificationHandler;
 import org.si.rm.brac.brac_v0.Utilities.EncryptingHandler;
 import org.si.rm.brac.brac_v0.Utilities.ValidationHandler;
+import org.si.rm.brac.brac_v0.others.bulders.AlertServiceBuilder;
 import org.si.rm.brac.brac_v0.others.bulders.FxmlLoaderBuilder;
 import org.si.rm.brac.brac_v0.others.factories.FxLoaderFactory;
 import org.si.rm.brac.brac_v0.services.ProfileService;
 import org.si.rm.brac.brac_v0.services.ViewLoaderServices.FXMLoaderService;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class LogInController implements Initializable {
+public class LogInController {
 
     @FXML
     private AnchorPane BigAnchor;
@@ -58,18 +61,19 @@ public class LogInController implements Initializable {
 
     @FXML
     void ExitButton(ActionEvent event) {
-
+        Stage stage=(Stage) ExitButton.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     void logIn(ActionEvent event) {
 
-        ValidationHandler validationHandler = new ValidationHandler();
-        validationHandler.add(userName.getText()).add(password.getText());
+       ValidationHandler validationHandler = new ValidationHandler();
+       validationHandler.add(userName.getText()).add(password.getText());
 
-        boolean successValidation = validationHandler.validateFields();
+        boolean emptyFields = validationHandler.validateFields();
 
-        if(successValidation)
+        if(!emptyFields)
             {
                 EncryptingHandler encryptingHandler = new EncryptingHandler();
                 String encrypted_password = encryptingHandler.Encrypt(password.getText());
@@ -88,9 +92,17 @@ public class LogInController implements Initializable {
                             .setParent(null)
                             .build()).load();
 
+                    ExitButton(null);
+
                 }
 
-            }
+            }else {
+            ((Alert)Lookup.getInstance().getService(AlertServiceBuilder.class).createAlert(Alert.AlertType.WARNING)
+                    .setMessage("حداري خانة معلومات فارغة ..!")
+                    .setHeaderText("لم يتم ادخال كلمة السر او اسم المستخدم..!")
+                    .setTitle("معالجة التسجيل")
+                    .build()).show();
+        }
 
 
 
@@ -102,13 +114,6 @@ public class LogInController implements Initializable {
     void signIn(ActionEvent event) {
 
     }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    }
 
-    private void validateFields()
-    {
-
-    }
 }

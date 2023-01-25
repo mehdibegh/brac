@@ -17,7 +17,7 @@ public class FormulationHomeLoaderBuilder implements FxmlLoaderBuilder {
 
     @Override
     public FxmlLoaderBuilder setCSS() {
-        fxmlLoaderService.setCSS_resource("./styles/formulationHome.css");
+        fxmlLoaderService.setCSS_resource("styles/formulationHome.css");
         return this;
     }
 

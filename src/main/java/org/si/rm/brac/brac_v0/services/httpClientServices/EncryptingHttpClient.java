@@ -1,7 +1,6 @@
 package org.si.rm.brac.brac_v0.services.httpClientServices;
 
 import org.si.rm.brac.brac_v0.others.parsers.EncryptingResponseParser;
-import org.si.rm.brac.brac_v0.others.parsers.FieldValidatoResponseParse;
 import org.si.rm.brac.brac_v0.others.parsers.JsonEncryptingResponseParser;
 
 import java.io.IOException;
@@ -16,8 +15,9 @@ public class EncryptingHttpClient extends HttpClientService{
     @Override
     public Object post() {
         try {
+            System.out.println("Request: "+httpRequest);
             httpResponse = httpClient.send(httpRequest , HttpResponse.BodyHandlers.ofString());
-
+            System.out.println("Response: "+httpResponse);
             if(connectionStatusCodeHandler.checkRespond(httpResponse))
             {
                 System.out.println("Response From Encrypting server  : ");

@@ -20,7 +20,7 @@ public class EncryptingHandler {
         JsonRequestParser parser = new PasswordEncryptingJsonCraetor();
         String data = parser.create(list);
 
-        String[] request = {"/RSA", "PST",data};
+        String[] request = {"/RSA", "POST",data};
 
         EncryptingServiceBuilder encrypting = (EncryptingServiceBuilder) Lookup.getInstance().getService(FxHttpClientFactory.class).get("Encrypting");
         try {
