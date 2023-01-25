@@ -18,7 +18,8 @@ public class FxModelsFactory implements ServiceFactory {
                 modelBuilder = new LoginInformationBuilder();
                 break;
 
-            case "Model2":
+            case "FileInsertionModel":
+                modelBuilder =new FileInsertionBuilder();
                 break;
 
 
