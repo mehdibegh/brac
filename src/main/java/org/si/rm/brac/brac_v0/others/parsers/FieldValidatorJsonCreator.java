@@ -4,18 +4,22 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FieldValidatorJsonCreator implements JsonRequestParser{
     @Override
-    public String create(ArrayList<String> values) {
+    public String create(HashMap<String,String> values) {
         final JSONObject obj = new JSONObject();
         JSONArray dataValues = new JSONArray();
-        for(int i =0;i<values.size();i++)
+        int index =0;
+        for(Map.Entry m : values.entrySet())
         {
             JSONObject field = new JSONObject();
-            field.putOnce("field",values.get(i));
+            field.putOnce((String) m.getKey(),m.getValue());
 
-            dataValues.put(i,field);
+            dataValues.put(index,field);
+            index += 1;
 
         }
 

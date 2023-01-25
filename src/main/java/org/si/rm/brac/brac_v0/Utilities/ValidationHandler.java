@@ -9,22 +9,22 @@ import org.si.rm.brac.brac_v0.services.errorHandlerServices.exceptions.NotAmetho
 import org.si.rm.brac.brac_v0.services.httpClientServices.ValidatorHttpClient;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ValidationHandler {
-    private ArrayList<String> fields = null;
+    private HashMap<String,String>  fields = null;
 
     public ValidationHandler() {
-        this.fields = new ArrayList<>();
+        this.fields = new HashMap<>();
     }
 
-    public ValidationHandler add(String field){
-        fields.add(field);
+    public ValidationHandler add(String key , String value){
+        fields.put(key,value);
         return this;
     }
 
     public boolean validateFields()
     {
-        ArrayList<Integer> list = new ArrayList<>();
         FieldValidatorJsonCreator fieldValidatorJsonCreator = new FieldValidatorJsonCreator();
 
         String data = fieldValidatorJsonCreator.create(fields);

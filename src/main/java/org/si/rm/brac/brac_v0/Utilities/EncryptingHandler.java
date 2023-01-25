@@ -10,15 +10,16 @@ import org.si.rm.brac.brac_v0.services.errorHandlerServices.exceptions.NotAmetho
 import org.si.rm.brac.brac_v0.services.httpClientServices.EncryptingHttpClient;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class EncryptingHandler {
     public String Encrypt(String password)
     {
-        ArrayList<String> list = new ArrayList<>();
-        list.add(password);
+        HashMap<String ,String > map = new HashMap<>();
+        map.put("password",password);
 
         JsonRequestParser parser = new PasswordEncryptingJsonCraetor();
-        String data = parser.create(list);
+        String data = parser.create(map);
 
         String[] request = {"/RSA", "POST",data};
 

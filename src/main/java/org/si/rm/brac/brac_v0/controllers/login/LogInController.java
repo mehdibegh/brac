@@ -69,7 +69,7 @@ public class LogInController {
     void logIn(ActionEvent event) {
 
        ValidationHandler validationHandler = new ValidationHandler();
-       validationHandler.add(userName.getText()).add(password.getText());
+       validationHandler.add("field",userName.getText()).add("field",password.getText());
 
         boolean emptyFields = validationHandler.validateFields();
 
