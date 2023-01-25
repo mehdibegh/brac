@@ -7,10 +7,7 @@ public class EncryptingResponseParser implements JsonEncryptingResponseParser{
     @Override
     public String getPassword(String response) {
         final JSONObject obj = new JSONObject(response);
-        JSONArray list = obj.getJSONArray("Encrypted Password");
-        String rsa_password = list.getString(0);
+        String rsa_password = obj.getString("Encrypted Password");
         return rsa_password;
-
-
     }
 }
